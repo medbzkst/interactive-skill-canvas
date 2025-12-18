@@ -139,3 +139,54 @@ export const personalInfo = {
     lab: 'https://cemse.kaust.edu.sa/profiles/mohamed-bouaziz'
   }
 };
+
+export interface TeachingExperience {
+  role: string;
+  course: string;
+  institution: string;
+  period: string;
+  description?: string;
+}
+
+export interface StudentSupervision {
+  name: string;
+  level: string;
+  topic: string;
+  period: string;
+  outcome?: string;
+}
+
+export const teachingData = {
+  taExperience: [
+    {
+      role: 'Teaching Assistant',
+      course: 'CS 280 - Computer Architecture',
+      institution: 'KAUST',
+      period: 'Spring 2024',
+      description: 'Assisted with lab sessions on processor design and memory hierarchy'
+    },
+    {
+      role: 'Teaching Assistant',
+      course: 'CS 220 - Computer Organization',
+      institution: 'KAUST',
+      period: 'Fall 2023',
+      description: 'Led tutorial sessions on assembly programming and digital logic'
+    }
+  ] as TeachingExperience[],
+  studentSupervision: [
+    {
+      name: 'Undergraduate Intern',
+      level: 'BS',
+      topic: 'FPGA-based accelerator design for ML inference',
+      period: 'Summer 2024',
+      outcome: 'Co-authored workshop paper'
+    },
+    {
+      name: 'Master\'s Project',
+      level: 'MS',
+      topic: 'Compiler optimizations for spatial architectures',
+      period: '2023-2024',
+      outcome: 'Ongoing collaboration'
+    }
+  ] as StudentSupervision[]
+};
