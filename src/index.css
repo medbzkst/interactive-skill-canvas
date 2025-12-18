@@ -1,96 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 220 20% 6%;
+    --foreground: 210 20% 90%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 20% 10%;
+    --card-foreground: 210 20% 90%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 20% 10%;
+    --popover-foreground: 210 20% 90%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 180 70% 50%;
+    --primary-foreground: 220 20% 6%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 20% 15%;
+    --secondary-foreground: 210 20% 90%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 15% 20%;
+    --muted-foreground: 210 15% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 300 70% 60%;
+    --accent-foreground: 220 20% 6%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 180 70% 50%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Theme colors */
+    --compiler: 180 70% 50%;
+    --compiler-glow: 180 70% 60%;
+    --architecture: 300 70% 55%;
+    --architecture-glow: 300 70% 65%;
+    --hpc: 35 90% 55%;
+    --hpc-glow: 35 90% 65%;
+    --fpga: 150 70% 45%;
+    --fpga-glow: 150 70% 55%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Gradients */
+    --gradient-compiler: linear-gradient(135deg, hsl(180 70% 50% / 0.15), hsl(180 70% 50% / 0.05));
+    --gradient-architecture: linear-gradient(135deg, hsl(300 70% 55% / 0.15), hsl(300 70% 55% / 0.05));
+    --gradient-hpc: linear-gradient(135deg, hsl(35 90% 55% / 0.15), hsl(35 90% 55% / 0.05));
+    --gradient-fpga: linear-gradient(135deg, hsl(150 70% 45% / 0.15), hsl(150 70% 45% / 0.05));
 
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Shadows */
+    --shadow-compiler: 0 0 40px hsl(180 70% 50% / 0.3);
+    --shadow-architecture: 0 0 40px hsl(300 70% 55% / 0.3);
+    --shadow-hpc: 0 0 40px hsl(35 90% 55% / 0.3);
+    --shadow-fpga: 0 0 40px hsl(150 70% 45% / 0.3);
   }
 }
 
@@ -100,6 +66,159 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-mono;
+    background-image: 
+      radial-gradient(circle at 20% 80%, hsl(180 70% 50% / 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(300 70% 55% / 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, hsl(35 90% 55% / 0.02) 0%, transparent 70%);
+  }
+
+  ::selection {
+    @apply bg-primary/30 text-foreground;
+  }
+}
+
+@layer components {
+  .circuit-pattern {
+    background-image: 
+      linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px),
+      linear-gradient(hsl(var(--border)) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .theme-card {
+    @apply relative overflow-hidden rounded-lg border border-border/50 backdrop-blur-sm;
+    @apply transition-all duration-500 ease-out;
+  }
+
+  .theme-card-compiler {
+    background: var(--gradient-compiler);
+    border-color: hsl(var(--compiler) / 0.3);
+  }
+
+  .theme-card-compiler:hover {
+    border-color: hsl(var(--compiler) / 0.6);
+    box-shadow: var(--shadow-compiler);
+  }
+
+  .theme-card-architecture {
+    background: var(--gradient-architecture);
+    border-color: hsl(var(--architecture) / 0.3);
+  }
+
+  .theme-card-architecture:hover {
+    border-color: hsl(var(--architecture) / 0.6);
+    box-shadow: var(--shadow-architecture);
+  }
+
+  .theme-card-hpc {
+    background: var(--gradient-hpc);
+    border-color: hsl(var(--hpc) / 0.3);
+  }
+
+  .theme-card-hpc:hover {
+    border-color: hsl(var(--hpc) / 0.6);
+    box-shadow: var(--shadow-hpc);
+  }
+
+  .theme-card-fpga {
+    background: var(--gradient-fpga);
+    border-color: hsl(var(--fpga) / 0.3);
+  }
+
+  .theme-card-fpga:hover {
+    border-color: hsl(var(--fpga) / 0.6);
+    box-shadow: var(--shadow-fpga);
+  }
+
+  .text-compiler { color: hsl(var(--compiler)); }
+  .text-architecture { color: hsl(var(--architecture)); }
+  .text-hpc { color: hsl(var(--hpc)); }
+  .text-fpga { color: hsl(var(--fpga)); }
+
+  .bg-compiler { background-color: hsl(var(--compiler)); }
+  .bg-architecture { background-color: hsl(var(--architecture)); }
+  .bg-hpc { background-color: hsl(var(--hpc)); }
+  .bg-fpga { background-color: hsl(var(--fpga)); }
+
+  .border-compiler { border-color: hsl(var(--compiler)); }
+  .border-architecture { border-color: hsl(var(--architecture)); }
+  .border-hpc { border-color: hsl(var(--hpc)); }
+  .border-fpga { border-color: hsl(var(--fpga)); }
+
+  .glow-compiler { text-shadow: 0 0 20px hsl(var(--compiler) / 0.5); }
+  .glow-architecture { text-shadow: 0 0 20px hsl(var(--architecture) / 0.5); }
+  .glow-hpc { text-shadow: 0 0 20px hsl(var(--hpc) / 0.5); }
+  .glow-fpga { text-shadow: 0 0 20px hsl(var(--fpga) / 0.5); }
+
+  .link-hover {
+    @apply relative inline-block;
+  }
+
+  .link-hover::after {
+    content: '';
+    @apply absolute left-0 bottom-0 w-full h-px scale-x-0 origin-right transition-transform duration-300;
+    background: currentColor;
+  }
+
+  .link-hover:hover::after {
+    @apply scale-x-100 origin-left;
+  }
+
+  .pulse-dot {
+    @apply w-2 h-2 rounded-full;
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+  }
+
+  .scan-line {
+    @apply absolute inset-0 pointer-events-none;
+    background: linear-gradient(
+      transparent 0%,
+      hsl(var(--foreground) / 0.02) 50%,
+      transparent 100%
+    );
+    animation: scan 8s linear infinite;
+  }
+
+  @keyframes scan {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+  }
+}
+
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fade-in-up 0.5s ease-out forwards;
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.3s ease-out forwards;
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 }
