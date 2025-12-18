@@ -1,5 +1,6 @@
 import { Header } from '@/components/Header';
 import { ThemeCard } from '@/components/ThemeCard';
+import { TeachingSection } from '@/components/TeachingSection';
 import { Footer } from '@/components/Footer';
 import { portfolioThemes } from '@/data/portfolioData';
 
@@ -18,6 +19,9 @@ const Index = () => {
             ))}
           </div>
         </div>
+
+        {/* Teaching & Mentoring Section */}
+        <TeachingSection />
       </main>
 
       {/* Footer */}
