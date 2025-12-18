@@ -54,7 +54,7 @@ export const ThemeCard = ({ theme, index }: ThemeCardProps) => {
       className={cn(
         'theme-card group cursor-pointer',
         styles.card,
-        'min-h-[280px] md:min-h-[320px]',
+        'min-h-[180px] md:min-h-[200px]',
         'animate-fade-in-up'
       )}
       style={{ animationDelay: `${index * 100}ms` }}

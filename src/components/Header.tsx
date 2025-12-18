@@ -1,5 +1,6 @@
+import { Link } from 'react-router-dom';
 import { personalInfo } from '@/data/portfolioData';
-import { Mail, FileText, Linkedin, Github, ExternalLink } from 'lucide-react';
+import { Mail, FileText, Linkedin, Github, ExternalLink, BookOpen } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export const Header = () => {
@@ -16,6 +17,23 @@ export const Header = () => {
       <div className="absolute inset-0 circuit-pattern opacity-20" />
       
       <div className="relative z-10 max-w-4xl mx-auto text-center">
+        {/* Navigation */}
+        <nav className="flex items-center justify-center gap-6 mb-8">
+          <Link 
+            to="/" 
+            className="text-sm text-muted-foreground hover:text-primary transition-colors font-mono"
+          >
+            ~/home
+          </Link>
+          <Link 
+            to="/publications" 
+            className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors font-mono"
+          >
+            <BookOpen className="w-3.5 h-3.5" />
+            publications
+          </Link>
+        </nav>
+
         {/* Terminal-style intro */}
         <div className="inline-block mb-6">
           <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
