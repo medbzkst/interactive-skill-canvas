@@ -141,52 +141,82 @@ export const personalInfo = {
 };
 
 export interface TeachingExperience {
-  role: string;
+  type: 'official' | 'unofficial';
   course: string;
-  institution: string;
+  level?: string;
   period: string;
-  description?: string;
+  description: string;
+  link?: { text: string; url: string };
 }
 
-export interface StudentSupervision {
-  name: string;
-  level: string;
-  topic: string;
+export interface MentoringExperience {
+  program: string;
   period: string;
+  students: string;
+  topic: string;
   outcome?: string;
 }
 
 export const teachingData = {
-  taExperience: [
+  officialTA: [
     {
-      role: 'Teaching Assistant',
-      course: 'CS 280 - Computer Architecture',
-      institution: 'KAUST',
-      period: 'Spring 2024',
-      description: 'Assisted with lab sessions on processor design and memory hierarchy'
+      type: 'official' as const,
+      course: 'CS356: Hardware Accelerator Architectures',
+      level: 'PhD',
+      period: "Spring'25",
+      description: 'Designing a High-Level Synthesis (HLS) tutorial from scratch. Giving tutorial sessions on HLS. Grading the course project.'
     },
     {
-      role: 'Teaching Assistant',
-      course: 'CS 220 - Computer Organization',
-      institution: 'KAUST',
-      period: 'Fall 2023',
-      description: 'Led tutorial sessions on assembly programming and digital logic'
+      type: 'official' as const,
+      course: 'CS256: Digital Design and Computer Architecture',
+      level: 'MS',
+      period: "Fall'23, '24, '25",
+      description: 'Giving tutorials on Vivado, providing help sessions for the course project (arcade game design in SystemVerilog), grading homework and the course project.'
+    },
+    {
+      type: 'official' as const,
+      course: 'CS280: System Architecture and Performance',
+      level: 'MS',
+      period: "Fall'23",
+      description: 'Grading homework and the course project, and providing assistance to students.'
     }
   ] as TeachingExperience[],
-  studentSupervision: [
+  unofficialTeaching: [
     {
-      name: 'Undergraduate Intern',
-      level: 'BS',
-      topic: 'FPGA-based accelerator design for ML inference',
-      period: 'Summer 2024',
-      outcome: 'Co-authored workshop paper'
+      type: 'unofficial' as const,
+      course: 'High-Level Synthesis and AMD NPU Programming',
+      period: "Summer'25",
+      description: 'Gave sessions on HLS design and AMD NPU programming to a group of enthusiastic students. The course was sponsored by AMD, which generously provided access to FPGA boards and an AMD NPU-equipped machine.',
+      link: { text: 'Ecole Polytechnique de Tunisie', url: 'https://ept.tn/' }
     },
     {
-      name: 'Master\'s Project',
-      level: 'MS',
-      topic: 'Compiler optimizations for spatial architectures',
-      period: '2023-2024',
-      outcome: 'Ongoing collaboration'
+      type: 'unofficial' as const,
+      course: 'Digital Design and Computer Architecture',
+      period: "Spring'23",
+      description: 'Gave lectures about digital design, FPGA architecture, RISC-V architecture, and Verilog coding to a group of enthusiastic students.',
+      link: { text: 'Ecole Polytechnique de Tunisie', url: 'https://ept.tn/' }
     }
-  ] as StudentSupervision[]
+  ] as TeachingExperience[],
+  mentoring: [
+    {
+      program: 'Saudi Summer Internship',
+      period: "Summer'24",
+      students: '1 MSc student from Purdue University',
+      topic: 'RTL systolic matrix multiply using native FP32 operation support of AMD Versal DSP58 blocks',
+      outcome: 'Ranked 3rd best internship of Summer\'24'
+    },
+    {
+      program: 'KAUST Gifted Student Program',
+      period: "Summer'23",
+      students: '2 BSc students from UIUC',
+      topic: 'Building RTL designs of arbitrarily sized FP32 multipliers using AMD Versal DSP58 blocks'
+    },
+    {
+      program: 'KAUST Gifted Student Program',
+      period: "Summer'22",
+      students: '2 BSc students from UW',
+      topic: 'Extending OpenCGRA to support more interconnect topologies'
+    }
+  ] as MentoringExperience[],
+  ongoing: 'Actively mentoring new joiners and students undergoing their MS thesis in our research lab.'
 };
