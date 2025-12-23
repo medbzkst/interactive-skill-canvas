@@ -40,7 +40,7 @@ export const portfolioThemes: ThemeData[] = [
       {
         title: 'Leveraging MLIR for Efficient Irregular-Shaped CGRA Overlay Design',
         venue: 'ASAP\'24 PhD Forum',
-        url: 'https://moe-dataflow.com/papers/pdf/asap24cgraoverlay.pdf'
+        url: '/papers/pdf/asap24cgraoverlay.pdf'
       }
     ]
   },
@@ -63,7 +63,7 @@ export const portfolioThemes: ThemeData[] = [
       {
         title: 'Benchmarking Floating Point Performance of Massively Parallel Dataflow Overlays on AMD Versal',
         venue: 'IPDPSW\'25',
-        url: 'https://moe-dataflow.com/papers/pdf/ipdpsw25fp.pdf'
+        url: '/papers/pdf/ipdpsw25fp.pdf'
       }
     ]
   },
@@ -91,12 +91,12 @@ export const portfolioThemes: ThemeData[] = [
       {
         title: 'A Dataflow Overlay for Monte Carlo Multi-Asset Option Pricing on AMD Versal AI Engines',
         venue: 'ISC\'25',
-        url: 'https://moe-dataflow.com/papers/pdf/isc25mc.pdf'
+        url: '/papers/pdf/isc25mc.pdf'
       },
       {
         title: 'PRNGine: Massively Parallel PRNG and Probability Distribution on AMD AI Engines',
         venue: 'IPDPSW\'25',
-        url: 'https://moe-dataflow.com/papers/pdf/ipdpsw25prng.pdf'
+        url: '/papers/pdf/ipdpsw25prng.pdf'
       }
     ]
   },
@@ -133,7 +133,7 @@ export const personalInfo = {
   openTo: 'Open to internship opportunities in building compilers and custom spatial dataflow architectures for HPC and AI.',
   links: {
     email: 'mohamed.bouaziz@kaust.edu.sa',
-    resume: 'https://moe-dataflow.com/docs/resume.pdf',
+    resume: '/docs/resume.pdf',
     linkedin: 'https://www.linkedin.com/in/mohamed-bouaziz/',
     github: 'https://github.com/medbzkst',
     lab: 'https://cemse.kaust.edu.sa/profiles/mohamed-bouaziz'

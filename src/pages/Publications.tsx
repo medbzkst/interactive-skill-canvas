@@ -23,9 +23,9 @@ const publications: Publication[] = [
     venue: "ISC'25",
     year: '2025',
     abstract: 'Proposes a dataflow design to run Monte Carlo simulations on AMD AI Engines for a financial application. Demonstrates 25x speedup over Vitis Quant. Finance lib. on AMD FPGAs, 13x over 128 parallel CPU threads, and 1.8x energy efficiency over GPU implementation.',
-    pdfUrl: 'https://moe-dataflow.com/papers/pdf/isc25mc.pdf',
-    slidesUrl: 'https://moe-dataflow.com/papers/slides/isc25mc.pdf',
-    posterUrl: 'https://moe-dataflow.com/posters/snsl25mc.pdf',
+    pdfUrl: '/papers/pdf/isc25mc.pdf',
+    slidesUrl: '/papers/slides/isc25mc.pdf',
+    posterUrl: '/posters/snsl25mc.pdf',
     posterNote: "SNSL'25",
     category: 'conference'
   },
@@ -35,8 +35,8 @@ const publications: Publication[] = [
     venue: "IPDPSW'25",
     year: '2025',
     abstract: 'Shows how PRNGs can be implemented on AMD AI Engines by combining supported operations and how to deploy the design in a dataflow model.',
-    pdfUrl: 'https://moe-dataflow.com/papers/pdf/ipdpsw25prng.pdf',
-    slidesUrl: 'https://moe-dataflow.com/papers/slides/ipdpsw25prng.pdf',
+    pdfUrl: '/papers/pdf/ipdpsw25prng.pdf',
+    slidesUrl: '/papers/slides/ipdpsw25prng.pdf',
     category: 'workshop'
   },
   {
@@ -45,9 +45,9 @@ const publications: Publication[] = [
     venue: "IPDPSW'25",
     year: '2025',
     abstract: 'Compares the performance and the energy efficiency of floating-point units on AMD Versal (AI Engines v.s. DSP58 blocks) and highlights the challenges for implementing massive designs of FP32 operations on the same architecture.',
-    pdfUrl: 'https://moe-dataflow.com/papers/pdf/ipdpsw25fp.pdf',
-    slidesUrl: 'https://moe-dataflow.com/papers/slides/ipdpsw25fp.pdf',
-    posterUrl: 'https://moe-dataflow.com/posters/date25fp.pdf',
+    pdfUrl: '/papers/pdf/ipdpsw25fp.pdf',
+    slidesUrl: '/papers/slides/ipdpsw25fp.pdf',
+    posterUrl: '/posters/date25fp.pdf',
     posterNote: "DATE'25, OSSMPIC workshop",
     category: 'workshop'
   },
@@ -57,8 +57,8 @@ const publications: Publication[] = [
     venue: "ASAP'24 PhD Forum",
     year: '2024',
     abstract: 'Proposes leveraging MLIR compiler infrastructure to analyze irregularities in HPC/AI workloads and optimise the CGRA/dataflow architectures accordingly (performance & energy).',
-    pdfUrl: 'https://moe-dataflow.com/papers/pdf/asap24cgraoverlay.pdf',
-    posterUrl: 'https://moe-dataflow.com/posters/asap24cgraoverlay.pdf',
+    pdfUrl: '/papers/pdf/asap24cgraoverlay.pdf',
+    posterUrl: '/posters/asap24cgraoverlay.pdf',
     category: 'workshop'
   },
   {
