@@ -123,7 +123,7 @@ export const ThemeCard = ({ theme, index }: ThemeCardProps) => {
 
         {/* Expanded State - Full content */}
         <div className={cn(
-          'flex-1 overflow-y-auto transition-all duration-500',
+          'flex-1 overflow-y-auto transition-all duration-1000 ease-out',
           isVisible ? 'opacity-100' : 'opacity-0 h-0 overflow-hidden'
         )}>
           {/* Keywords */}
