@@ -64,7 +64,7 @@ export const Header = () => {
           href={personalInfo.links.lab}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 text-sm text-accent hover:underline link-hover"
+          className="inline-flex items-center gap-1 text-sm hover:underline link-hover"
         >
           {personalInfo.subtitle}
           <ExternalLink className="w-3 h-3" />
