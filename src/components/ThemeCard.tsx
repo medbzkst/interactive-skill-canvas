@@ -12,35 +12,30 @@ interface ThemeCardProps {
 const themeStyles: Record<ThemeType, {
   card: string;
   text: string;
-  glow: string;
   border: string;
   bg: string;
 }> = {
   compiler: {
     card: 'theme-card-compiler',
     text: 'text-compiler',
-    glow: 'glow-compiler',
     border: 'border-compiler',
     bg: 'bg-compiler',
   },
   architecture: {
     card: 'theme-card-architecture',
     text: 'text-architecture',
-    glow: 'glow-architecture',
     border: 'border-architecture',
     bg: 'bg-architecture',
   },
   hpc: {
     card: 'theme-card-hpc',
     text: 'text-hpc',
-    glow: 'glow-hpc',
     border: 'border-hpc',
     bg: 'bg-hpc',
   },
   fpga: {
     card: 'theme-card-fpga',
     text: 'text-fpga',
-    glow: 'glow-fpga',
     border: 'border-fpga',
     bg: 'bg-fpga',
   },
@@ -92,7 +87,7 @@ export const ThemeCard = ({ theme, index }: ThemeCardProps) => {
         {/* Header - Always visible */}
         <div className="flex items-start justify-between mb-4">
           <div>
-            <span className={cn('text-3xl md:text-4xl font-bold block mb-1', styles.text, styles.glow)}>
+            <span className={cn('text-3xl md:text-4xl font-bold block mb-1', styles.text)}>
               {theme.icon}
             </span>
             <h3 className={cn('text-xl md:text-2xl font-bold', styles.text)}>
@@ -174,7 +169,7 @@ export const ThemeCard = ({ theme, index }: ThemeCardProps) => {
 
           {/* Projects */}
           {theme.projects.length > 0 && (
-            <Section icon={<ExternalLink className="w-3 h-3" />} title="Projects" styles={styles}>
+            <Section icon={<ExternalLink className="w-3 h-3" />} title="Projects" styles={styles} linkTo="/projects">
               <div className="space-y-1.5">
                 {theme.projects.map((project) => (
                   <a

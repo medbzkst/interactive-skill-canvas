@@ -217,10 +217,10 @@
   .border-hpc { border-color: hsl(var(--hpc)); }
   .border-fpga { border-color: hsl(var(--fpga)); }
 
-  .glow-compiler { text-shadow: 0 0 20px hsl(var(--compiler) / 0.5); }
-  .glow-architecture { text-shadow: 0 0 20px hsl(var(--architecture) / 0.5); }
-  .glow-hpc { text-shadow: 0 0 20px hsl(var(--hpc) / 0.5); }
-  .glow-fpga { text-shadow: 0 0 20px hsl(var(--fpga) / 0.5); }
+  .text-compiler { color: hsl(var(--compiler)); }
+  .text-architecture { color: hsl(var(--architecture)); }
+  .text-hpc { color: hsl(var(--hpc)); }
+  .text-fpga { color: hsl(var(--fpga)); }
 
   .link-hover {
     @apply relative inline-block;
