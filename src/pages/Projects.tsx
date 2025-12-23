@@ -38,8 +38,28 @@ const projects: Project[] = [
 
 const Projects = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Header />
+      {/* Header */}
+      <header className="relative py-12 px-6 border-b border-border/30">
+        <div className="absolute inset-0 circuit-pattern opacity-10" />
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <Link 
+            to="/" 
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-6"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to Portfolio
+          </Link>
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center">
+              <FileText className="w-6 h-6 text-primary" />
+            </div>
+            <div>
+              <h1 className="text-3xl md:text-4xl font-bold text-foreground">Projects</h1>
+              <p className="text-muted-foreground mt-1">Projects in compilers, HPC, and reconfigurable computing</p>
+            </div>
+          </div>
+        </div>
+      </header>
       
       <main className="container mx-auto px-4 py-8 max-w-4xl">
         <h1 className="text-3xl md:text-4xl font-bold mb-8 text-primary">Projects</h1>
