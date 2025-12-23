@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { personalInfo } from '@/data/portfolioData';
-import { Mail, FileText, Linkedin, Github, ExternalLink, BookOpen } from 'lucide-react';
+import { Mail, FileText, Linkedin, Github, ExternalLink, BookOpen, FolderGit2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export const Header = () => {
@@ -31,6 +31,13 @@ export const Header = () => {
           >
             <BookOpen className="w-3.5 h-3.5" />
             publications
+          </Link>
+          <Link 
+            to="/projects" 
+            className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors font-mono"
+          >
+            <FolderGit2 className="w-3.5 h-3.5" />
+            projects
           </Link>
         </nav>
 
