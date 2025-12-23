@@ -27,7 +27,7 @@ export const portfolioThemes: ThemeData[] = [
     subtitle: 'MLIR/LLVM Infrastructure',
     icon: '⟨/⟩',
     keywords: ['MLIR', 'LLVM', 'Polyhedral Optimization', 'HLS', 'Polygeist', 'Clang'],
-    skills: ['MLIR (proficient)', 'C/C++ (advanced)', 'High-Level Synthesis'],
+    skills: ['MLIR (proficient)', 'C/C++ (advanced)', 'High-Level Synthesis (advanced)'],
     tools: ['MLIR/LLVM compiler infrastructure', 'Polygeist', 'Clang', 'Vitis HLS'],
     projects: [
       {
@@ -50,7 +50,7 @@ export const portfolioThemes: ThemeData[] = [
     subtitle: 'Spatial Dataflow Design',
     icon: '◇',
     keywords: ['Dataflow', 'CGRA', 'Spatial Computing', 'Reconfigurable', 'DSP Blocks'],
-    skills: ['Verilog/SystemVerilog (proficient)', 'RTL Design', 'Dataflow Modeling'],
+    skills: ['Verilog/SystemVerilog (proficient)', 'Dataflow Modeling (advanced)'],
     tools: ['Vivado', 'Vitis', 'OpenCGRA', 'AMD Versal Platform'],
     projects: [
       {
@@ -73,7 +73,7 @@ export const portfolioThemes: ThemeData[] = [
     subtitle: 'High-Performance Computing',
     icon: '⚡',
     keywords: ['Parallel Computing', 'Monte Carlo', 'PRNG', 'Performance Optimization'],
-    skills: ['C/C++ (advanced)', 'Python (advanced)', 'CUDA', 'OpenMP', 'OpenMPI'],
+    skills: ['C/C++ (advanced)', 'Python (advanced)', 'CUDA (proficient)', 'OpenMP (proficient)', 'OpenMPI (proficient)'],
     tools: ['CUDA', 'OpenMP', 'OpenMPI', 'Numpy', 'Cupy', 'Gprof'],
     projects: [
       {
