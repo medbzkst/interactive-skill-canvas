@@ -22,7 +22,7 @@ export const TeachingSection = () => {
             <div className="relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl p-6 hover:border-compiler/50 transition-all duration-300 h-full">
               <div className="flex items-center gap-2 mb-4">
                 <BookOpen className="w-4 h-4 text-compiler" />
-                <h3 className="font-mono font-semibold text-foreground">Official Teaching Assistant</h3>
+                <h3 className="font-mono font-semibold text-foreground">Teaching Assistant</h3>
               </div>
               <div className="space-y-4">
                 {teachingData.officialTA.map((ta, index) => (
@@ -73,17 +73,6 @@ export const TeachingSection = () => {
                     <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
                       {workshop.description}
                     </p>
-                    {workshop.link && (
-                      <a 
-                        href={workshop.link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-xs text-hpc hover:underline mt-2"
-                      >
-                        {workshop.link.text}
-                        <ExternalLink className="w-3 h-3" />
-                      </a>
-                    )}
                   </div>
                 ))}
               </div>
