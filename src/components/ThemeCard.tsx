@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { ThemeData, ThemeType } from '@/data/portfolioData';
 import { ExternalLink, Code, Wrench, BookOpen, Lightbulb } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 interface ThemeCardProps {
   theme: ThemeData;
@@ -195,7 +196,7 @@ export const ThemeCard = ({ theme, index }: ThemeCardProps) => {
 
           {/* Publications */}
           {theme.publications.length > 0 && (
-            <Section icon={<BookOpen className="w-3 h-3" />} title="Publications" styles={styles}>
+            <Section icon={<BookOpen className="w-3 h-3" />} title="Publications" styles={styles} linkTo="/publications">
               <div className="space-y-1.5">
                 {theme.publications.map((pub) => (
                   <a
@@ -223,13 +224,20 @@ interface SectionProps {
   title: string;
   children: React.ReactNode;
   styles: typeof themeStyles.compiler;
+  linkTo?: string;
 }
 
-const Section = ({ icon, title, children, styles }: SectionProps) => (
+const Section = ({ icon, title, children, styles, linkTo }: SectionProps) => (
   <div className="mb-3">
     <div className={cn('flex items-center gap-1.5 mb-1.5', styles.text)}>
       {icon}
-      <span className="text-xs font-semibold uppercase tracking-wider">{title}</span>
+      {linkTo ? (
+        <Link to={linkTo} className="text-xs font-semibold uppercase tracking-wider hover:underline">
+          {title}
+        </Link>
+      ) : (
+        <span className="text-xs font-semibold uppercase tracking-wider">{title}</span>
+      )}
     </div>
     {children}
   </div>
