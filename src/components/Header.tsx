@@ -100,11 +100,6 @@ export const Header = () => {
           ))}
         </div>
 
-        {/* Instruction hint */}
-        <div className="mt-12 flex items-center justify-center gap-2 text-xs text-muted-foreground/60">
-          <span className="inline-block w-4 h-4 border border-current rounded animate-pulse" />
-          <span>Hover over the squares below to explore</span>
-        </div>
       </div>
     </header>
   );
