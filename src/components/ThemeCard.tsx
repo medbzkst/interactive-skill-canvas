@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ThemeData, ThemeType } from '@/data/portfolioData';
 import { ExternalLink, Code, Wrench, BookOpen, Lightbulb } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -46,23 +46,40 @@ const themeStyles: Record<ThemeType, {
 };
 
 export const ThemeCard = ({ theme, index }: ThemeCardProps) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
   const styles = themeStyles[theme.id];
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div
+      ref={cardRef}
       className={cn(
-        'theme-card group cursor-pointer',
+        'theme-card group',
         styles.card,
         'min-h-[180px] md:min-h-[200px]',
         'animate-fade-in-up'
       )}
       style={{ animationDelay: `${index * 100}ms` }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
       {/* Scan line effect */}
-      <div className="scan-line opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className={cn('scan-line transition-opacity duration-500', isVisible ? 'opacity-100' : 'opacity-0')} />
       
       {/* Corner decorations */}
       <div className={cn('absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 opacity-30', styles.border)} />
@@ -90,7 +107,7 @@ export const ThemeCard = ({ theme, index }: ThemeCardProps) => {
         {/* Collapsed State - Keywords preview */}
         <div className={cn(
           'flex flex-wrap gap-2 transition-all duration-300',
-          isHovered ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100'
+          isVisible ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100'
         )}>
           {theme.keywords.slice(0, 4).map((keyword) => (
             <span
@@ -111,7 +128,7 @@ export const ThemeCard = ({ theme, index }: ThemeCardProps) => {
         {/* Expanded State - Full content */}
         <div className={cn(
           'flex-1 overflow-y-auto transition-all duration-500',
-          isHovered ? 'opacity-100' : 'opacity-0 h-0 overflow-hidden'
+          isVisible ? 'opacity-100' : 'opacity-0 h-0 overflow-hidden'
         )}>
           {/* Keywords */}
           <Section icon={<Lightbulb className="w-3 h-3" />} title="Keywords" styles={styles}>
@@ -196,14 +213,6 @@ export const ThemeCard = ({ theme, index }: ThemeCardProps) => {
           )}
         </div>
 
-        {/* Hover indicator */}
-        <div className={cn(
-          'absolute bottom-4 left-1/2 -translate-x-1/2',
-          'text-xs text-muted-foreground transition-opacity duration-300',
-          isHovered ? 'opacity-0' : 'opacity-60'
-        )}>
-          hover to explore
-        </div>
       </div>
     </div>
   );
