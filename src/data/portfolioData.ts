@@ -186,15 +186,13 @@ export const teachingData = {
       type: 'unofficial' as const,
       course: 'High-Level Synthesis and AMD NPU Programming',
       period: "Summer'25",
-      description: 'Gave sessions on HLS design and AMD NPU programming to a group of enthusiastic students. The course was sponsored by AMD, which generously provided access to FPGA boards and an AMD NPU-equipped machine.',
-      link: { text: 'Ecole Polytechnique de Tunisie', url: 'https://ept.tn/' }
+      description: 'Gave sessions on HLS design and AMD NPU programming to a group of enthusiastic students. The course was sponsored by AMD, which generously provided access to FPGA boards and an AMD NPU-equipped machine.'
     },
     {
       type: 'unofficial' as const,
       course: 'Digital Design and Computer Architecture',
       period: "Spring'23",
-      description: 'Gave lectures about digital design, FPGA architecture, RISC-V architecture, and Verilog coding to a group of enthusiastic students.',
-      link: { text: 'Ecole Polytechnique de Tunisie', url: 'https://ept.tn/' }
+      description: 'Gave lectures about digital design, FPGA architecture, RISC-V architecture, and Verilog coding to a group of enthusiastic students.'
     }
   ] as TeachingExperience[],
   mentoring: [
