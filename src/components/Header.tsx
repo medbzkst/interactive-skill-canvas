@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { personalInfo } from '@/data/portfolioData';
-import { Mail, FileText, Linkedin, Github, ExternalLink, BookOpen, FolderGit2 } from 'lucide-react';
+import { Mail, FileText, Linkedin, Github, ExternalLink, BookOpen, FolderGit2, Home } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export const Header = () => {
@@ -18,38 +18,29 @@ export const Header = () => {
       
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         {/* Navigation */}
-        <nav className="flex items-center justify-center gap-6 mb-8">
+        <nav className="flex items-center justify-center gap-4 mb-8">
           <Link 
             to="/" 
-            className="text-sm text-muted-foreground hover:text-primary transition-colors font-mono"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm text-sm text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300"
           >
-            ~/home
+            <Home className="w-4 h-4" />
+            Home
           </Link>
           <Link 
             to="/publications" 
-            className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors font-mono"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm text-sm text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300"
           >
-            <BookOpen className="w-3.5 h-3.5" />
-            publications
+            <BookOpen className="w-4 h-4" />
+            Publications
           </Link>
           <Link 
             to="/projects" 
-            className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors font-mono"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm text-sm text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300"
           >
-            <FolderGit2 className="w-3.5 h-3.5" />
-            projects
+            <FolderGit2 className="w-4 h-4" />
+            Projects
           </Link>
         </nav>
-
-        {/* Terminal-style intro */}
-        <div className="inline-block mb-6">
-          <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
-            <span className="w-3 h-3 rounded-full bg-destructive/60" />
-            <span className="w-3 h-3 rounded-full bg-hpc/60" />
-            <span className="w-3 h-3 rounded-full bg-fpga/60" />
-            <span className="ml-2 font-mono">~/portfolio</span>
-          </div>
-        </div>
 
         {/* Name with glow effect */}
         <h1 className="text-4xl md:text-6xl font-bold mb-3 tracking-tight">

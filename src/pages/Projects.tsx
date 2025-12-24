@@ -1,6 +1,7 @@
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ExternalLink } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 interface Project {
   name: string;
@@ -60,7 +61,12 @@ const Projects = () => {
                   {project.name}
                   <ExternalLink className="w-4 h-4" />
                 </a>
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">
+                <span className={cn(
+                  "text-xs px-2 py-1 rounded font-medium",
+                  project.role === 'owner' 
+                    ? 'bg-primary/20 text-primary' 
+                    : 'bg-hpc/20 text-hpc'
+                )}>
                   {project.role}
                 </span>
               </div>
