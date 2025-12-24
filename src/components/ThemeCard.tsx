@@ -53,7 +53,7 @@ export const ThemeCard = ({ theme, index }: ThemeCardProps) => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.5 }
     );
 
     if (cardRef.current) {
@@ -123,7 +123,7 @@ export const ThemeCard = ({ theme, index }: ThemeCardProps) => {
 
         {/* Expanded State - Full content */}
         <div className={cn(
-          'flex-1 overflow-y-auto transition-all duration-1000 ease-out',
+          'flex-1 overflow-y-auto transition-all duration-[1500ms] ease-out',
           isVisible ? 'opacity-100' : 'opacity-0 h-0 overflow-hidden'
         )}>
           {/* Keywords */}

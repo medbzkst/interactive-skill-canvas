@@ -65,7 +65,7 @@ const Projects = () => {
                   "text-xs px-2 py-1 rounded font-medium",
                   project.role === 'owner' 
                     ? 'bg-primary/20 text-primary' 
-                    : 'bg-hpc/20 text-hpc'
+                    : 'bg-orange-500/20 text-orange-600 dark:text-orange-400'
                 )}>
                   {project.role}
                 </span>
