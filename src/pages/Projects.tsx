@@ -51,18 +51,18 @@ const Projects = () => {
               key={project.name}
               className="p-6 rounded-lg border border-border bg-card hover:border-primary/50 transition-colors"
             >
-              <div className="flex items-start justify-between gap-4 mb-3">
+              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 mb-3">
                 <a
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-lg font-semibold text-primary hover:underline flex items-center gap-2"
+                  className="text-lg font-semibold text-primary hover:underline flex items-center gap-2 break-words min-w-0"
                 >
-                  {project.name}
-                  <ExternalLink className="w-4 h-4" />
+                  <span className="break-all">{project.name}</span>
+                  <ExternalLink className="w-4 h-4 flex-shrink-0" />
                 </a>
                 <span className={cn(
-                  "text-xs px-2 py-1 rounded font-medium",
+                  "text-xs px-2 py-1 rounded font-medium flex-shrink-0 self-start",
                   project.role === 'owner' 
                     ? 'bg-primary/20 text-primary' 
                     : 'bg-orange-500/20 text-orange-600 dark:text-orange-400'
