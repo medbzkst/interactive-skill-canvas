@@ -87,7 +87,7 @@ export default {
   		},
 		fontFamily: {
 			sans: [
-				'Source Sans 3',
+				'Public Sans Variable',
 				'ui-sans-serif',
 				'system-ui',
 				'-apple-system',
@@ -100,7 +100,7 @@ export default {
 				'sans-serif'
 			],
 			serif: [
-				'Merriweather',
+				'Fraunces Variable',
 				'ui-serif',
 				'Georgia',
 				'Cambria',
