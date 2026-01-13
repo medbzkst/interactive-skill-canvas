@@ -86,7 +86,7 @@ export const Header = () => {
               )}
             >
               <Icon className="w-4 h-4" />
-              <span className="hidden sm:inline">{label}</span>
+              <span>{label}</span>
             </a>
           ))}
         </div>
