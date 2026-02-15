@@ -12,6 +12,12 @@ interface Project {
 
 const projects: Project[] = [
   {
+    name: "medbzkst/XRT-2022.1-Ubuntu-24.04LTS",
+    url: "https://github.com/medbzkst/XRT-2022.1-Ubuntu-24.04LTS",
+    role: "collaborator",
+    description: "Compatibility port of XRT 2022.1 branch (202210.2.13.466) to Ubuntu 24.04 so VCK5000 can run despite platform support stopping around Vitis/Vivado/XRT 2022.2 and newer XRT versions not working for this setup."
+  },
+  {
     name: "accl-kaust/mc-option-pricing-aie",
     url: "https://github.com/accl-kaust/mc-option-pricing-aie",
     role: "owner",
